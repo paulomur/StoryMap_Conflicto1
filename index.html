@@ -335,6 +335,12 @@
             format: 'jpg',
             time: '',
             tilematrixset: 'GoogleMapsCompatible_Level'})],
+
+        'CartoDB_Positron' : [ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}@2x.png')],
+
+        'CartoDB_Positron2' : [ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_only_labels/{z}/{x}/{y}@2x.png')],
+
+
         'OpenStreetMap': [L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png')],
 
         'hosti': [ L.geoJson.ajax('assets/hosti.geojson',  {
@@ -391,10 +397,10 @@
 
     var scenes = {
         overview: {lat: 1, lng: -76, zoom: 7, position: 'fullpage', name: 'front page'},
-        Scene1: {lat: 4, lng: -76, zoom: 6, layers: ['Mapbox Dark', 'hosti2'], name: 's1'},
-        Scene2: {lat: 4, lng: -76, zoom: 7, layers: ['Mapbox Dark','parks_all'], name: 's2'},
-        Scene3: {lat: 2.8, lng: -74.8, zoom: 10, layers: ['Mapbox Outdoors','picachos', 'drivers'], name: 's3'},
-        Scene4: {lat: 2.8, lng: -74.8, zoom: 11, layers: ['Mapbox Streets','picachos', 'drivers'], name: 's4'},
+        Scene1: {lat: 4, lng: -76, zoom: 6, layers: ['CartoDB_Positron', 'hosti2'], name: 's1'},
+        Scene2: {lat: 4, lng: -76, zoom: 7, layers: ['CartoDB_Positron','parks_all'], name: 's2'},
+        Scene3: {lat: 2.8, lng: -74.8, zoom: 10, layers: ['CartoDB_Positron2','picachos', 'drivers'], name: 's3'},
+        Scene4: {lat: 2.85, lng: -74.8, zoom: 11, layers: ['Mapbox Streets','picachos', 'drivers'], name: 's4'},
         end: {lat: 2.8, lng: -74.8, zoom: 11, position: 'fullpage', name: 'last page'}
     };
 
